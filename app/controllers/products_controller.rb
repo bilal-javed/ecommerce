@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
+  before_filter :authenticate_user!
   before_filter :set_profile, except: [:index, :new, :create]
   def index
     @products = Product.all

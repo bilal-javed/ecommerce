@@ -8,13 +8,15 @@ gem 'rails', '3.2.18'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '~> 0.3.10'
+group :development do
+	gem 'mysql2', '~> 0.3.10'
+end
 
-#postgreausql
-gem 'pg'
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
 
-#gem for heroku
-gem 'rails_12factor', group: :production
 
 #paperclip
 gem 'paperclip'
@@ -23,7 +25,7 @@ gem 'paperclip'
 gem 'devise'
 
 #active amdin
- gem 'activeadmin'
+ gem 'activeadmin', '0.5.0'
  gem "meta_search", '>= 1.1.0.pre'
 
 # Gems used only for assets and not required

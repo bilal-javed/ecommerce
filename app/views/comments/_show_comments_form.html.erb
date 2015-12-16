@@ -1,0 +1,11 @@
+<% @comments.each do |comment| %>
+	<p>
+		<span> <%= comment.created_at %> </span>
+		<span><%= comment.product.name %></span>
+	</p>
+	<p>
+		<span><b> Comment: </b></span>
+		<%= comment.comment %>
+	</p>
+
+<% end %>

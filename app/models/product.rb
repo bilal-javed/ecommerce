@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :model, :name
+  attr_accessible :description, :model, :name, :attachments_attributes
 
   has_many :comments
+  has_many :attachments, as: :attachable, dependent: :destroy
+  accepts_nested_attributes_for :attachments
 end

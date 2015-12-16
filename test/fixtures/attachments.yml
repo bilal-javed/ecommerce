@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  attachment_id: 1
+  attachment_type: MyString
+
+two:
+  attachment_id: 1
+  attachment_type: MyString

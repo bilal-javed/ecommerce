@@ -16,6 +16,9 @@ gem 'pg'
 #gem for heroku
 gem 'rails_12factor', group: :production
 
+#paperclip
+gem "paperclip"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

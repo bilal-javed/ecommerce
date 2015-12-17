@@ -25,7 +25,7 @@ gem 'paperclip'
 gem 'devise'
 
 #active amdin
- gem 'activeadmin', '0.5.0'
+ gem 'activeadmin'
  gem "meta_search", '>= 1.1.0.pre'
 
 # Gems used only for assets and not required

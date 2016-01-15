@@ -2,11 +2,22 @@
 <html>
 <head>
   <title>Ecommerce</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav id="nav">
+		<div>
+		<% if user_signed_in? %>
+			<b>Your cart total: </b><%= number_to_currency(@total, :unit => '$') %>
+			<%= link_to 'Sign Out',  destroy_user_session_path, method: :delete %>
+		<% else %>
+			<%= link_to 'Sing Up', new_user_registration_path, method: :get %>
+			<%= link_to 'Sing In', new_user_session_path, method: :get %>
+		<% end %>
+		</div>
+	</nav>
 
 	<p id="notice"><%= notice %></p>
   <p id="alert"><%= alert %></p>

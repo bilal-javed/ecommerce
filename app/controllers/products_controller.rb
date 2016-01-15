@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
   before_filter :set_profile, except: [:index, :new, :create]
   def index
     @products = Product.all
@@ -17,8 +17,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
 
-    @comment = Comment.new
-    @comments = @product.comments
+    @comment = Review.new
+    @comments = @product.reviews
 
     respond_to do |format|
       format.html # show.html.erb

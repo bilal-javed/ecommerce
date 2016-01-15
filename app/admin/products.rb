@@ -1,15 +1,15 @@
 ActiveAdmin.register Product do
-	# show do
-	# 	form do |f|
-	# 		f.inputs do
-	# 			f.has_many :comment, new_record: 'Leave a comment' do |comment|
-	# 				comment.input :comment
-	# 			end
-	# 		end
-	# 		f.actions
-	# 	end
-	# end
+	index do
+		column :id
+		column :name
+		column :model
+		column :created_at
+
+		column :comments do |comment|
+			link_to 'comments', admin_product_comments_path(comment)
+		end
+
+
+		default_actions
+	end
 end
-# ActiveAdmin.register Comment as: 'Post' do
-# 	belongs_to :product
-# end

@@ -35,4 +35,17 @@ Ecommerce::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #Stripe API KEYS
+
+  #publish key
+  # PUBLISHABLE_KEY = :pk_test_cBendMLNqDqwrlZdHdkoPHqH
+
+  # pk_test_cBendMLNqDqwrlZdHdkoPHqH  :PUBLISHABLE_KEY
+  #secret key
+  # SECRET_KEY = :sk_test_vTTVF6ienV05Mnk9JUIWuVFi
+
+  # sk_test_vTTVF6ienV05Mnk9JUIWuVFi :SECRET_KEY
+  # config.PUBLISHABLE_KEY: 'pk_test_cBendMLNqDqwrlZdHdkoPHqH'
+  # config.SECRET_KEY: 'sk_test_vTTVF6ienV05Mnk9JUIWuVFi'
 end

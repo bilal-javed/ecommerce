@@ -24,6 +24,18 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :subcategory %><br />
+    <%= f.text_field :subcategory %>
+  </div>
+  <div class="field">
     <%= f.fields_for :attachments do |photo| %>
       <%= photo.file_field :photo %>
     <% end %>

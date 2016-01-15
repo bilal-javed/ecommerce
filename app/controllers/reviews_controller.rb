@@ -1,10 +1,11 @@
-class CommentsController < ApplicationController
+class ReviewsController < ApplicationController
   # GET /comments
   # GET /comments.json
   before_filter :set_comment, only: [:show, :edit, :update, :destroy]
   before_filter :set_product, only: [:create]
+   before_filter :authenticate_user!, only: [:create]
   def index
-    @comments = Comment.all
+    @comments = Review.all
     respond_with(@comments)
   end
 
@@ -17,7 +18,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   # GET /comments/new.json
   def new
-    @comment = Comment.new
+    @comment = Review.new
     respond_with(@comment)
   end
 
@@ -28,7 +29,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = @product.comments.new(params[:comment])
+    @comment = @product.reviews.new(params[:review])
     @comment.save
     redirect_to @comment.product
   end
@@ -36,7 +37,7 @@ class CommentsController < ApplicationController
   # PUT /comments/1
   # PUT /comments/1.json
   def update
-    @comment.update_attributes(params[:comment])
+    @comment.update_attributes(params[:review])
     respond_with(@comment)
   end
 
@@ -49,7 +50,7 @@ class CommentsController < ApplicationController
   
   private
     def set_comment
-      @comment = Comment.find(params[:id])
+      @comment = Review.find(params[:id])
     end
 
     def set_product

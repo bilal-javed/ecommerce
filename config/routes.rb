@@ -1,4 +1,8 @@
 Ecommerce::Application.routes.draw do
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -8,8 +12,10 @@ Ecommerce::Application.routes.draw do
   root to: "products#index"
 
 
+  resources :charges
+  
   resources :products do
-    resources :comments
+    resources :reviews
   end
 
 

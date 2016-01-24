@@ -20,4 +20,12 @@
 		<% @total += quantity*product.price %>
 	<% end %>
 	<p><b>Total of your cart is: </b><%= number_to_currency(@total, :unit => '$') %></p>
+
+	<td><script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount= <%= @total * 100 %>
+          data-locale="auto"></script></td>
+
+    <%= link_to 'Back to shop', products_path %>
 </ul>

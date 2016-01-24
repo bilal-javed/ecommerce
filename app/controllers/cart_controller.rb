@@ -14,6 +14,7 @@ class CartController < ApplicationController
   		cart[id] = 1
   	end
   	redirect_to :action => :index
+    # redirect_to new_charge_path
 	end
 
 	def clearCart
